@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database</title>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table width="100%">
+    <tr style="color:white">
+        <th><a href="{{ url_for('main_page') }}">Main page</a></th>
+        <th><a href="{{ url_for('database_interaction') }}">Database interaction</a></th>
+    </tr>
+</table>
+
+<form action="/database_interaction/" method="post">
+    <p><label>Query: </label> <input type="text" name="query"></p>
+</form>
+
+<table width="100%" bgcolor="#DBF9FC">
+    <tr bgcolor="#33475b" style="color:white">
+        <th>ID</th>
+        <th>date</th>
+        <th>channel</th>
+        <th>os</th>
+        <th>impressions</th>
+        <th>clicks</th>
+        <th>installs</th>
+        <th>spend</th>
+        <th>revenue</th>
+        <th>cpi</th>
+    </tr>
+    <tr>
+    {% for item in list %}
+        <td>{{ item.id }}</td>
+        <td>{{ item.date }}</td>
+        <td>{{ item.channel }}</td>
+        <td>{{ item.os }}</td>
+        <td>{{ item.impressions }}</td>
+        <td>{{ item.clicks }}</td>
+        <td>{{ item.installs }}</td>
+        <td>{{ item.spend }}</td>
+        <td>{{ item.revenue }}</td>
+        <td>{{ item.cpi }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

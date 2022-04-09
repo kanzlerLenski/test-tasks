@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result_error</title>
+    <style>
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table width="100%">
+        <tr style="color:white">
+            <th><a href="{{ url_for('main_page') }}">Main page</a></th>
+            <th><a href="{{ url_for('database_interaction') }}">Database interaction</a></th>
+        </tr>
+    </table>
+<p> </p>
+<p>{{ text }}</p>
+<p>{{ error }}</p>
+</body>
+</html>
+</body>
+</html>
